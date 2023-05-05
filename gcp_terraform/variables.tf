@@ -1,13 +1,13 @@
 variable "project" {
   description = "The project ID to host the cluster in"
   type        = string
-  default     = "elliptical-feat-385302"
+  default     = "elite-epoch-385710"
 }
 
 variable "name" {
   description = "name of the kubernetes cluster"
   type        = string
-  default     = "minh-gke"
+  default     = "capstone-gke"
 }
 
 variable "region" {

@@ -10,7 +10,7 @@
 
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_network
 resource "google_compute_network" "main" {
-  name                    = "minh-gke-vpc"
+  name                    = "capstone-gke-vpc"
   auto_create_subnetworks = false
   project                 = var.project
   routing_mode            = "REGIONAL"

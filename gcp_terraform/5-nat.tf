@@ -1,6 +1,6 @@
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_router_nat
 resource "google_compute_router_nat" "nat" {
-  name   = "minh-gke-nat"
+  name   = "capstone-gke-nat"
   router = google_compute_router.router.name
   region = var.region
 

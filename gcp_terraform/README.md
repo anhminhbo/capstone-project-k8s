@@ -15,3 +15,7 @@ gcloud init
 ```
 cloud auth application-default login
 ```
+
+```
+gcloud components install gke-gcloud-auth-plugin
+```
