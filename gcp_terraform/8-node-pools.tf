@@ -21,6 +21,15 @@ resource "google_project_iam_binding" "sa_binding_log" {
   ]
 }
 
+resource "google_project_iam_binding" "grant_gke_permission" {
+  project = var.project
+  role    = "roles/container.admin"
+
+  members = [
+    "serviceAccount:${google_service_account.kubernetes.email}"
+  ]
+}
+
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/container_node_pool
 resource "google_container_node_pool" "general" {
   name       = "general"
@@ -33,7 +42,7 @@ resource "google_container_node_pool" "general" {
   }
 
   node_config {
-    preemptible  = false
+    preemptible  = true
     machine_type = var.nodetype
 
     disk_size_gb = var.disksize
@@ -62,7 +71,7 @@ resource "google_container_node_pool" "general2" {
   }
 
   node_config {
-    preemptible  = false
+    preemptible  = true
     machine_type = var.nodetype
 
 
